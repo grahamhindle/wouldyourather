@@ -1,0 +1,40 @@
+.bar-label {
+  color: red;
+  font-family: 'Titillium Web', sans-serif;
+  letter-spacing: 1px;
+  font-weight: normal;
+  position: relative;
+  top: 4px;
+  left: 20px;
+}
+.bar-suffix {
+display: inline-block;
+  color: black;
+  font-family: 'Titillium Web', sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;
+  position: relative;
+  top: 4px;
+  left: 20px;
+}
+.bar-contain {
+  width: 90%;
+  padding: 0;
+  display: inline-block; 
+  border-radius: 3px;
+}
+.bar-expand {
+  display: inline-block;
+  border-radius: 3px 0 0 3px;
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif
+}
+.heading {
+  font-weight: 700;
+}
+.subheading {
+  font-weight: 300;
+}
+
