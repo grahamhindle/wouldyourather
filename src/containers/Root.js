@@ -8,15 +8,12 @@ import { GlobalStyle } from '../injectGlobalStyles'
 import { ThemeProvider } from 'styled-components'
 import theme from '../constants/theme'
 import App from '../components/App'
-import {handleInitialData} from  '../actions'
 import { PersistGate} from 'redux-persist/integration/react'
-import { setAuthedUser } from '../actions/authedUserActions';
+
 
  
 const Root = () => {
-  store.dispatch(setAuthedUser(''))
   return (
-    
     <Provider store={store}>
       <PersistGate persistor={persiststore} loading={null}>
       <GlobalStyle />

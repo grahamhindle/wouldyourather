@@ -42,6 +42,11 @@ const DialogTitle = withStyles(theme => ({
   );
 });
 const styles = theme =>({
+  root:{
+    border: '1px solid blue',
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+  },
   avatar: {
     backgroundColor: blue[100],
     color: blue[600],
@@ -50,12 +55,12 @@ const styles = theme =>({
     flex:1,
     flexGrow: 1,
     margin:'auto',
+    border: '1px solid blue',
+    alignItesm:'center',
     marginTop: '10px',
     marginBottom:'10px',
     padding: '20px',
-    backgroundColor: '#eeeeee',
-    borderStyle: 'solid',
-    borderColor: 'black',
+    backgroundColor: 'white',
     width: '100%',
     maxHeight: '250px',
   },
@@ -120,8 +125,8 @@ class SimpleDialog extends React.Component {
         suffix:'%'},
     ],
     optionTwo: [
-      {label:"75%", value:75, barColor:'blue',  barHeight: 32,verticalSpacing:5, makeUppercase: false,suffix:'%'},
-  ],
+      {label:"75%", value:75, barColor:'black',  barHeight: 32, makeUppercase: false,suffix:'%'},
+    ],
   }
   handleClose = () => {
     this.props.onClose();
@@ -130,36 +135,28 @@ class SimpleDialog extends React.Component {
   handleListItemClick = value => {
     this.props.onClose(value);
   };
-componentDidMount(){
+  componentDidMount(){
 
-  this.setState(state => {
-    const one = state.optionOne.map(label => {
-      
-      label.label = `${this.props.votes.opt1percent}%`
-      label.value = this.props.votes.opt1percent
+    this.setState(state => {
+      const one = state.optionOne.map(label => {
+        label.label = `${this.props.votes.opt1percent}%`
+        label.value = this.props.votes.opt1percent
+      })
+      return one
     })
-    return {
-      one
-    }
-  })
 
-  this.setState(state => {
-    const two = state.optionTwo.map(label => {
-      label.label = `${this.props.votes.opt2percent}%`
-      label.value = this.props.votes.opt2percent
+    this.setState(state => {
+      const two = state.optionTwo.map(label => {
+        label.label = `${this.props.votes.opt2percent}%`
+        label.value = this.props.votes.opt2percent
+      })
+      return two
     })
-    return {
-      two
-    }
-  })
-  
-}
-  
-
+  }
   render() {
     const { classes, votes,  author, question } = this.props;
     return (
-      <div style={{backgroundColor:'#D5DBDB'}}>
+      <div className={classes.root} style={{backgroundColor:'#D5DBDB'}}>
       <Dialog  fullWidth={true}
           maxWidth={'md'} onClose={this.handleClose}open={this.props.open}>
         <DialogTitle className={classes.dtitle} color='primary' id="customized-dialog-title" onClose={this.handleClose}>
@@ -168,63 +165,64 @@ componentDidMount(){
         <Grid container spacing={8}>
           <Grid >
             <Avatar className={classes.bigAvatar} 
-            alt={`Avatar n°${author.author + 1}`}
-            src={author.avatarURL}
-              />
+              alt={`Avatar n°${author.author + 1}`}
+              src={author.avatarURL}
+            />
           </Grid>
-          <Grid item xs={2} sm container>
+          <Grid item xs={4} sm container>
             <Grid item xs container direction="column" spacing={24}>
               <Grid item xs>
-                <Typography color='inherit' variant='h6' gutterBottom >
+                <Typography color='inherit' variant='h6' >
                   Results
                 </Typography>
-                <Grid item xs>
-                  <Paper className={classes.paper}>
+                
+                <Paper className={classes.paper}>
+                  <Typography color='inherit' variant='body1' >
+                    {question.optionOne.text}
+                  </Typography>
+                  <div >
+                  <Bars  data={this.state.optionOne} makeUppercase={true} />
+                  </div>
+                  <Typography color='inherit' variant='body1' gutterBottom >
+                    {`${votes.opt1} out of ${votes.opt1+votes.opt2} votes`}
+                  </Typography> 
                   {votes.match1 ?
-                      <Grid item xs container
-                        direction="column"
-                        justify="flex-end"
-                        alignItems="flex-end"
-                        >
-                        <Typography color='inherit' variant='body1' >
-                        your vote!
-                        </Typography>
-                        <div style={{color:'#F1C40F',borderStyle:'solid',backgroundColor:'black',
-                                      borderColor: 'black',width:'50px',height:'50px'}}>
-                          <Icon className={classNames(classes.icon, 'fas fa-vote-yea')} />
-                      </div>
-                      </Grid>: null }
-                    <Typography color='inherit' variant='body1' gutterBottom>
-                      {question.optionOne.text}
-                      </Typography>
-                    <Bars style={{fontSize:'6px'}} data={this.state.optionOne} makeUppercase={true} />
-                    <Typography color='inherit' variant='body1' gutterBottom>
-                      {`${votes.opt1} out of ${votes.opt1+votes.opt2} votes`}
-                      </Typography>
-                    
-                  </Paper>
-                </Grid>
+                    <Typography color='inherit' variant='body1' >
+                      your vote!
+                      <Icon className={classNames(classes.icon, 'fas fa-vote-yea')}/>
+                    </Typography>: null 
+                  }
+                </Paper>
+                
                 <Typography color='inherit' variant='h6'>
                     Or
                 </Typography>
                 <Paper className={classes.paper}>
                   <Typography color='inherit' variant='body1'>
                     {question.optionTwo.text}
-                    </Typography>
-                    <Bars style={{fontSize:'6px'}} data={this.state.optionTwo} makeUppercase={true} />
+                  </Typography>
+                  <div >
+                    <Bars  data={this.state.optionOne} makeUppercase={true} />
+                  </div>
                     <Typography color='inherit' variant='body1' gutterBottom>
                       {`${votes.opt2} out of ${votes.opt1+votes.opt2} votes`}
-                      </Typography>
-                </Paper>
+                    </Typography>
+                    {!votes.match1 ?
+                      <Typography color='inherit' variant='body1' >
+                      your vote!
+                        <Icon className={classNames(classes.icon, 'fas fa-vote-yea')}/>
+                      </Typography>: null 
+                    }
+                    </Paper>
+                  </Grid>
+                </Grid>
               </Grid>
-              </Grid>
-          </Grid>
-          </Grid>
-      </Dialog>
-      </div>
-    )
+            </Grid>
+          </Dialog>
+        </div>
+      )
+    }
   }
-}
 
 SimpleDialog.propTypes = {
   classes: PropTypes.object.isRequired,

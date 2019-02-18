@@ -11,28 +11,56 @@ const styles = theme => ({
   root: {
     flex: 1,
     backgroundColor: theme.palette.background.paper,
+    marginTop:'200px',
+    width:'50%',
+    marginLeft:'25%'
+    
   },
   type: {
-    flex:1,
-    backgroundColor: 'lightgray',
-    border: '2px solid blue',
+    flexGrow:1,
+    backgroundColor: 'white',
+    textColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
     
   },
   container: {
-    display: 'flex',
+    
+    flexWrap: 'wrapon',
+    border: '1px solid blue',
+    backgroundColor: theme.palette.background.paper,
+    alignItems: 'center',
+    padding: theme.spacing.unit * 2,
+   
+
+
+  },
+  help:{
+    flexDirection: 'row',
+    alignItems: 'flex-end',
     flexWrap: 'wrapoff',
+    border: '2px solid blue',
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing.unit * 2,
+    marginLeft:'50%',
+    marginTop:'25%'
+
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: '50%',
+    width: '100%',
   },
   button: {
     margin: theme.spacing.unit,
-    height: '50px',
-    width: '25px'
+    alignItems: 'flex-end',
+    flexDirection:'row',
+    bottom:0,
+    
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    
+    
   },
   dense: {
     marginTop: 19,
@@ -55,7 +83,6 @@ const styles = theme => ({
     padding: '20px',
     backgroundColor: '#eeeeee',
     border: '2px solid blue',
-    width: '50%',
     maxHeight: '300',
     overflow: 'auto',
     alignItems: 'center',
@@ -97,19 +124,13 @@ class NewQuestion extends Component {
     const { classes} = this.props
     const {value} =this.state.value
     return (
-
+      <div className={classes.root}>
        <Paper className={classes.paper}>
-         <AppBar  position="static" >
-         
-           <Typography variant="h6" className={classes.type}  >Please enter a new Question</Typography>
-           </AppBar>
-
-
+           <Typography variant="h6" color="inherit"  >
+             Enter a new Question</Typography>
          {value === 0 && <NewQTabContainer>New Question</NewQTabContainer>}
          <form className={classes.container} noValidate autoComplete="off">
-         <Grid item xs={6}>
-         
-       
+         <Grid item xs={12}>
         <TextField
         onChange={this.handleChange('optionOneText')}
           id="standard-with-placeholder"
@@ -127,21 +148,21 @@ class NewQuestion extends Component {
         className={classes.textField}
         margin="normal"
       />   
-      </Grid>
-      <Grid item xs={3}>
-      <Button  variant="contained" size="small"  className={classes.stickToBottom} onClick={this.handleQuestion}>
+      
+        <Button  variant="contained" size="small"  className={classes.button} onClick={this.handleQuestion}>
           Submit
         </Button>
-        <Button  variant="contained" size="small"  className={classes.stickToBottom}>
+        <Button  variant="contained" size="small"  className={classes.button}>
           Cancel
         </Button> 
-        </Grid>
-      
-         
-
-       
+      </Grid>
+      <Grid item xs={12}>
+      <Typography className={classes.container} variant="body1" color="inherit"  >
+      If you enter a question make sure both option one and Option two are entered WE DO NOT valid for valid questions at this time</Typography>
+      </Grid>
         </form>
          </Paper>
+         </div>
     )
   }
 }

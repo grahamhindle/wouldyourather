@@ -11,9 +11,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {Link} from 'react-router-dom'
 
 
-
-
-
 const styles = theme => ({
   root: {
     margin:'auto',
@@ -25,7 +22,6 @@ const styles = theme => ({
     overflow: 'scroll',
     alignItems: 'center',
     justifyContent: 'center',
-  
   },
   subheader:{
     backgroundColor: 'inherit',
@@ -48,12 +44,7 @@ const styles = theme => ({
   iconSmall: {
     fontSize: 15,
   },
-
-  
-});
-
-
-
+})
 class Login extends Component {
   state = {
     open:false,
@@ -78,18 +69,22 @@ class Login extends Component {
   };
   render(){
     const { classes, users} = this.props
-  console.log('loggedOn',this.state.loggedOn)
+  
   return (
     <div className={classes.root}>
-    
-    <List
-        component="nav"
-        subheader={<ListSubheader className={classes.subheader} color='primary' component="div">Login to continue</ListSubheader>}
-        className={classes.paper}
-        color='primary'
-      >
-      <Divider/>
-      {users.map((user) => (
+     
+        <List
+          component="nav"
+          subheader={<ListSubheader 
+          className={classes.subheader} 
+          color='primary' 
+          component="div">Login to continue
+          </ListSubheader>}
+          className={classes.paper}
+          color='primary'
+        >
+        <Divider/>
+        {users.map((user) => (
         <ListItem
           className={classes.listitem}
           button={true}
@@ -105,19 +100,18 @@ class Login extends Component {
         </ListItemAvatar>
         <ListItemText primary={user.name}/>
         </ListItem>
-      ))} 
-      <Divider/>
-      {this.state.loggedOn && 
-        <Link to="/" style={{color: 'white'}} >Home</Link>
-      }
-      <Button variant='contained' className={classes.button} aria-label="Login" color="primary">
-      {' Register  '} 
-      <FontAwesomeIcon className={classes.iconLeft} icon="sign-in-alt"/>
-     </Button>
+        ))} 
+        <Divider/>
+        {this.state.loggedOn && 
+          <Link to="/" style={{color: 'white'}} >Home</Link>
+        }
+        <Button variant='contained' className={classes.button} aria-label="Login" color="primary">
+        {' Register  '} 
+        <FontAwesomeIcon className={classes.iconLeft} icon="sign-in-alt"/>
+        </Button>
       </List>
-      
-     
-    </div>
+   
+  </div>
   )
       }
 }

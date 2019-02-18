@@ -4,8 +4,9 @@ import { connect } from 'react-redux'
 import Users from '../components/Users'
 import { getUserData } from '../actions/userActions'
 import { GET_USERS} from '../constants/actionTypes'
+import Startup from '../components/startup'
 
-const UsersContainer = props => <Users {...props} />
+const UsersContainer = props => props.authedUser ? <Users {...props} /> : <Startup />
 
 const mapStateToProps = state => ({
   users: _.values(state.users),

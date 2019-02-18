@@ -10,15 +10,21 @@ import ProgressLoader from './ProgressLoader'
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+    root: {
+      flex: 1,
+      backgroundColor: 'white',
+      marginTop:'200px',
+      width:'50%',
+      marginLeft:'25%'
+      
+    },
   },
   paper: {
     margin:'auto',
     marginTop: '100px',
     padding: '20px',
-    backgroundColor: '#eeeeee',
     width: '50%',
+    border: '1px solid blue',
     maxHeight: '500px',
     overflow: 'scroll',
     alignItems: 'center',
@@ -66,13 +72,19 @@ class  Questions extends Component {
     
     const {value} =this.state.value
     return (
+      <div className={classes.root}>
       <Paper className={classes.paper}>
-         <AppBar  position="static" >
-           <Tabs variant='fullWidth' value={this.state.value} onChange={this.handleChange} >
-             <Tab color='#73AD21'label="Unanswered" />
-             <Tab label="Answered" />
-             
-           </Tabs>
+         <AppBar  color='inherit' className={classes.root} position="static"  >
+           <Tabs  
+            indicatorColor="primary"
+            textColor="primary" 
+            variant='fullWidth' 
+            value={this.state.value} 
+            onChange={this.handleChange} 
+          >
+            <Tab className={classes.root} label="Unanswered" />
+            <Tab className={classes.root} label="Answered" />
+          </Tabs>
          </AppBar>
          {value === 0 && <TabContainer >Unanswered</TabContainer>}
          {value=== 1 && <TabContainer>Answered</TabContainer>}
@@ -91,6 +103,7 @@ class  Questions extends Component {
 
         
          </Paper>
+         </div>
        
     )
   }

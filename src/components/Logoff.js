@@ -2,9 +2,12 @@ import React, { Fragment } from "react"
 import MainMenu  from './MainMenu'
 import Users from './Users'
 
-const Home = () => {
+const Logoff = (props) => {
+  console.log(props.author)
+
   return (
-    <div>Logoff screen</div>
+    <div style={{height:'50%', width:'50%' , marginTop:'100px' , marginLeft:'25%'}}>
+     `logging off {props.loggedonData.author}'</div>
   )
 }
-export default Home
+export default Logoff

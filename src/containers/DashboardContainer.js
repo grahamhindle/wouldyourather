@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { setAuthedUser } from '../actions/authedUserActions'
 import { connect } from 'react-redux'

@@ -6,6 +6,9 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import Icon from '@material-ui/core/Icon'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
 
 
 
@@ -22,64 +25,54 @@ const styles = {
 
 class MainMenu extends React.Component {
 
-  state = {
-    value: 0,
-    logonLabel:'Logon',
-    loggedon: false,
-  }
-
-  componentDidMount(){
-    console.log('user', this.props.authedUser)
-  }
-
-  
-    handleChange = (event, value) => {
-      console.log('loggedon user',this.props.loggedOn )
-      this.setState((prevState) => 
-      ({ loggedOn:false, value:value, logonLabel: 'Logoff' })
-      )
+    handleChange = () => {
+      
     }
-  
 
   render() {
-    const { classes,authedUser ,...props} = this.props;
-    const { value } = this.state;
     
+   
+    const { classes } = this.props
     return (
       <BottomNavigation
-        value={value}
+        
         onChange={this.handleChange}
         showLabels
         className={classes.stickToBottom}
-      >
-      
+        >
         <BottomNavigationAction 
           component={Link} 
           to="/"
           label="Home" 
-          disabled={this.state.loggedon}
-          icon={<Icon color='inherit'  className={classNames(classes.icon, 'fas fa-home')}/>}/>
+          
+          icon={<FontAwesomeIcon icon="home" color='inherit' disabled  />}/>
         <BottomNavigationAction 
           component={Link} 
           to="/newq"
           label="NewQuestion" 
-          disabled={this.state.loggedon}
-          icon={<Icon color='inherit' disabled className={classNames(classes.icon, 'fas fa-question-circle')} />}/>
+          
+          icon={<FontAwesomeIcon icon="question-square" color='inherit' disabled  />}/>
         <BottomNavigationAction 
           component={Link} 
           to="/score"
           label="Score" 
-          disabled={this.state.loggedon}
-          icon={<Icon color='inherit' disabled className={classNames(classes.icon, 'fas fa-poll')} />} />
+          
+          icon={<FontAwesomeIcon icon="tachometer" color='inherit' disabled  />} />
       
         <BottomNavigationAction 
         component={Link} 
           to="/profile"
-          label= {this.state.logonLabel}
-          icon={<Icon color='primary' className={classNames(classes.icon, 'fas fa-sign-out-alt')} />}/>
-      </BottomNavigation>
+          label= "Sign In"
+          icon={<FontAwesomeIcon icon="sign-in" color='inherit' disabled  />}/>
+      
+        <BottomNavigationAction 
+          component={Link} 
+            to="/startup"
+            label= {'Demo mode'}
+            icon={<FontAwesomeIcon icon="info-circle" color='inherit' disabled  />}/>
+      </BottomNavigation> 
     )
-    }
+  }
 }
 
 MainMenu.propTypes = {
