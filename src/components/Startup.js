@@ -69,7 +69,9 @@ class  Startup extends Component {
       
 <div style={{height:'50%', width:'50%' , marginTop:'100px' , marginLeft:'25%'}}>
       <Link
-      to={'/profile'}>
+      style={{color:'#FFFFFF', decoration:'none'}}
+      to={'/profile'}
+      >
       
 
       <Card  className={classes.card}>
@@ -85,7 +87,7 @@ class  Startup extends Component {
             A game of decisions
           </Typography>
           <Typography component="p">
-            Click anywhere to Login or Register
+            Click anywhere to Login
           </Typography>
         </CardContent>
       </Card>

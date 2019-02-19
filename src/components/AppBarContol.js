@@ -19,32 +19,14 @@ import Button from '@material-ui/core/Button';
       grow: {
         flexGrow: 1,
       },
-      menuButton: {
-        marginLeft: -12,
-        marginRight: 20,
-      },
       button: {
         margin: theme.spacing.unit,
-      },
-      leftIcon: {
-        marginRight: theme.spacing.unit,
-      },
-      rightIcon: {
-        marginLeft: theme.spacing.unit,
-      },
-      iconSmall: {
-        fontSize: 20,
       },
       avatar: {
         margin: 10,
       },
-      bigAvatar: {
-        margin: 10,
-        width: 60,
-        height: 60,
-      },
+      
     })
-
 
 
 
@@ -60,18 +42,18 @@ function AppBarControl(props) {
           <Typography variant="h6" color="inherit" className={classes.grow}>
             Would You Rather...
           </Typography>
-          <Typography className={classes.grow} variant="h6" color="inherit" className={classes.grow}>
+          <Typography className={classes.grow} variant="h6" color="inherit" >
              Welcome {user.name}
           </Typography>
-          <Link to={'/profile'}>
-          <Button  color="inherit" className={classes.button}>
-        Logoff
-        {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
-        <Avatar alt="Remy Sharp" src={user.avatarURL} className={classes.avatar} />
-      </Button>
-          
+          <Link to={'/profile'} style={{color:'#FFFFFF',decoration:'none'}}>
+          <Button  color="primary" className={classes.button}>
+            Logoff
+            <Avatar 
+              alt={`Avatar n°${user.name + 1}`}
+              src={user.avatarURL} 
+              className={classes.avatar} />
+          </Button>
           </Link>
-
         </Toolbar>
       </AppBar>
     </div>

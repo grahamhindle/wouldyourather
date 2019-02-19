@@ -2,11 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import Login from '../components/Login'
-import Logoff from '../components/Logoff'
 import {Link} from 'react-router-dom'
 import { getAuthedUser,setAuthedUser } from '../actions/authedUserActions'
 
-const LoginContainer = props => (<Link to={'/'}><Login { ...props} /></Link>)
+const LoginContainer = props => (<Link to={'/'} style={{color:'#FFFFFF',textDecoration: 'none'}}><Login { ...props} /></Link>)
 
 
   

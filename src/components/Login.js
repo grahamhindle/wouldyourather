@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import List from '@material-ui/core/List'
 import { ListItem, ListSubheader} from '@material-ui/core'
-import {ListItemAvatar ,Avatar} from '@material-ui/core'
+import {ListItemAvatar ,Avatar, Tooltip } from '@material-ui/core'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
 import Button from '@material-ui/core/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {Link} from 'react-router-dom'
 
+const tbdText = `Not yet implemented`
 
 const styles = theme => ({
   root: {
@@ -25,8 +26,10 @@ const styles = theme => ({
   },
   subheader:{
     backgroundColor: 'inherit',
-    border: '2px solid blue',
-    fontSize:'25px',
+    border: '1px solid blue',
+    fontSize:'24px',
+    alignItems:'center',
+    justifyContent: 'center',
   },
   icon: {
     margin: theme.spacing.unit * 2,
@@ -39,7 +42,7 @@ const styles = theme => ({
     marginRight: theme.spacing.unit,
   },
   rightIcon: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing.unit * 2,
   },
   iconSmall: {
     fontSize: 15,
@@ -62,11 +65,14 @@ class Login extends Component {
 
   handleOpen = () => {
     this.setState({ open: true });
-  };
-
+  }
   handleClose = () => {
     this.setState({ open: false });
-  };
+  }
+
+  
+
+
   render(){
     const { classes, users} = this.props
   
@@ -103,12 +109,16 @@ class Login extends Component {
         ))} 
         <Divider/>
         {this.state.loggedOn && 
-          <Link to="/" style={{color: 'white'}} >Home</Link>
+          <Link to="/" style={{color:'#FFFFFF', decoration:'none'}} >Home</Link>
         }
-        <Button variant='contained' className={classes.button} aria-label="Login" color="primary">
+        <Tooltip title={tbdText}>
+        <Button variant='contained'  className={classes.button} aria-label="Login" color="primary">
+
         {' Register  '} 
-        <FontAwesomeIcon className={classes.iconLeft} icon="sign-in-alt"/>
+       
+        <FontAwesomeIcon className={classes.rightIcon} icon="sign-in"/>
         </Button>
+        </Tooltip>
       </List>
    
   </div>
