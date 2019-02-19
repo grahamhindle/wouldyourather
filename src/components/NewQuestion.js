@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import {Paper,Button, AppBar,TextField} from '@material-ui/core'
+import {Paper,Button, TextField} from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
@@ -11,7 +11,7 @@ const styles = theme => ({
   root: {
     flex: 1,
     backgroundColor: theme.palette.background.paper,
-    marginTop:'200px',
+    marginTop:'100px',
     width:'50%',
     marginLeft:'25%'
     

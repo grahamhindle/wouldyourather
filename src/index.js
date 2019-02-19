@@ -4,17 +4,16 @@ import Root from './containers/Root'
 import * as serviceWorker from './serviceWorker'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-// import your icons
-import { faTachometer, faHome,faSignIn, faQuestionSquare,faTrophy,faInfoCircle} from '@fortawesome/pro-solid-svg-icons'
+
+import { faTachometerAlt, faHome,faSignInAlt,faQuestionCircle,faTrophy,faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 
 library.add(
-  faTachometer,
-  faSignIn,
-  faQuestionSquare,
+  faTachometerAlt,
+  faSignInAlt,
+  faQuestionCircle,
   faTrophy,
   faInfoCircle,
   faHome
-
 )
 
 ReactDOM.render(<Root />, document.getElementById('root'));

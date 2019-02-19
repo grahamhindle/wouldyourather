@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from 'react'
-
-
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -100,7 +98,7 @@ class Question extends Component {
   
   render() {
 
-    const {  classes,answer, author, question,users,answered,authedUser} = this.props
+    const {  classes, author, question,users,answered,authedUser} = this.props
     
     
     let displayQuestion = false

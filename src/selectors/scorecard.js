@@ -11,14 +11,14 @@ const getAuthedUser=state => (state.authedUser)
 
 
 export const userCount = createSelector(
-  [getUsers],
+  getUsers,
   (user) => {
     return Object.keys(user).length;
   }
 )
 
 export const questionCount = createSelector(
-  [getQuestions],
+  getQuestions,
   (questions) => {
     return Object.keys(questions).length;
   }
@@ -26,7 +26,7 @@ export const questionCount = createSelector(
 
 // get the questioncoount
 export const votesForQuestion = createSelector(
-  [getAuthedUser,(state,props)=> props],
+  getAuthedUser,(state,props)=> props,
   (user,props) => {
     const opt1 = Object.keys(props.optionOne.votes).length
     const opt2 = Object.keys(props.optionTwo.votes).length
@@ -60,7 +60,7 @@ export const calcPercent = ( num,denom) =>{
     return 0
 }
 export const votes = createSelector(
-  [getQuestions],
+  getQuestions,
   (questions) => {
    
     return Object.keys(questions).length;
@@ -68,8 +68,9 @@ export const votes = createSelector(
 )
 
 export const sortUsersByScore = createSelector(
-  [getUsers],
+  getUsers,
   (users) =>{
+    console.log('subs', users)
     const obj = Object.values(users)
     console.log('before',obj)
     obj.sort((a,b)  => 

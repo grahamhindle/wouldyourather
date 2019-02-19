@@ -12,10 +12,7 @@ const LoginContainer = props => (<Link to={'/'} style={{color:'#FFFFFF',textDeco
 
 const mapStateToProps = (state,props)=> {
   return {
-    author:state.authedUser,
-    users: Object.values(state.users),
-    loggedonData: state.users[state.authedUser]
-    
+    users: Object.values(state.users)
   }
 }
 export default connect(

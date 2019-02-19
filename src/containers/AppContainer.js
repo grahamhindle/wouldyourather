@@ -1,10 +1,12 @@
 import React from 'react'
-import { setAuthedUser } from '../actions/authedUserActions'
+import { handleInitialData } from '../actions'
 import { connect } from 'react-redux'
-import App  from '../components/Dashboard'
+import App  from '../components/App'
+import LoginContainer from '../containers/LoginContainer'
 
 
 const AppContainer = props => <App  {...props} />
+  
 
 const mapStateToProps = (state,props)=> {
   return {
@@ -13,5 +15,5 @@ const mapStateToProps = (state,props)=> {
 }
 export default connect(
   mapStateToProps,
-  {setAuthedUser},
+  {handleInitialData},
 )(AppContainer);

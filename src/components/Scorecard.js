@@ -134,9 +134,13 @@ class SimpleDialog extends React.Component {
 
   handleListItemClick = value => {
     this.props.onClose(value);
-  };
-  componentDidMount(){
+  }
 
+  
+
+
+  componentDidMount(){
+    
     this.setState(state => {
       const one = state.optionOne.map(label => {
         label.label = `${this.props.votes.opt1percent}%`
@@ -153,6 +157,8 @@ class SimpleDialog extends React.Component {
       return two
     })
   }
+
+
   render() {
     const { classes, votes,  author, question } = this.props;
     return (
@@ -237,28 +243,23 @@ class SimpleDialogDemo extends React.Component {
     open: false,
     
   };
-
   handleClickOpen = () => {
     this.setState({
       open: true,
     });
   };
-
   handleClose = value => {
     this.setState({ selectedValue: value, open: false });
   };
-
   render() {
     return (
       <div>
-        
-        <Button 
-             
-            variant='contained' 
-            size='large' 
-            fullWidth={true} 
-            onClick={() => this.handleClickOpen()}
-          >
+        <Button  
+          variant='contained' 
+          size='large' 
+          fullWidth={true} 
+          onClick={() => this.handleClickOpen()}
+        >
           Show Results
           </Button> 
         <SimpleDialogWrapped

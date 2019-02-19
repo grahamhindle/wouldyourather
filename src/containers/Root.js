@@ -9,13 +9,16 @@ import { ThemeProvider } from 'styled-components'
 import theme from '../constants/theme'
 import App from '../components/App'
 import { PersistGate} from 'redux-persist/integration/react'
+import ProgressLoader from '../components/ProgressLoader';
+
 
 
  
 const Root = () => {
+  
   return (
     <Provider store={store}>
-      <PersistGate persistor={persiststore} loading={null}>
+      <PersistGate persistor={persiststore} loading={<ProgressLoader/>}>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
       <StyledContainer>

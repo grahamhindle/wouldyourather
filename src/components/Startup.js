@@ -1,28 +1,17 @@
 import React, {Component} from 'react'
-import LoginContainer from '../containers/LoginContainer.js'
-import {Link} from 'react-router-dom'
+import StyledLink from '../styled/StyledLink'
 import { Card,
         CardMedia,
-        CardActionArea,
         CardContent,
-        CardActions,
         Typography,
-        Grid,
-        Button, 
-        ButtonBase} from '@material-ui/core'
+        } from '@material-ui/core'
         import { withStyles } from '@material-ui/core/styles';
-        import classnames from 'classnames';
-
-
-//welcome screen
-//button to logon
+       
 
 const styles = theme => ({
   card: {
     flexGrow: 1,
     maxWidth: '100%',
-    
-    
   },
   cardAction: {
     display: 'block',
@@ -51,27 +40,22 @@ const styles = theme => ({
     backgroundColor: 'red',
   },
 })
-
-
 class  Startup extends Component {
   state={
     isLogon: false
   }
-  
   handleClick=(event) => {
     this.setState({isLogon:true})
-    
     }
   render(){
     const {classes} = this.props
-
     return(
-      
-<div style={{height:'50%', width:'50%' , marginTop:'100px' , marginLeft:'25%'}}>
-      <Link
+ 
+    <div style={{height:'50%', width:'50%' , marginTop:'100px' ,                    marginLeft:'25%'}}>
+    <StyledLink
       style={{color:'#FFFFFF', decoration:'none'}}
       to={'/profile'}
-      >
+    >
       
 
       <Card  className={classes.card}>
@@ -91,7 +75,7 @@ class  Startup extends Component {
           </Typography>
         </CardContent>
       </Card>
-      </Link>
+      </StyledLink>
       
       </div>
     )

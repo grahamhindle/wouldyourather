@@ -14,6 +14,7 @@ import { GET_QUESTIONS,APP_INIT,UPDATE_ANSWER } from "../constants/actionTypes";
           dispatch (apiStart(GET_QUESTIONS))
           dispatch(updateUserQuestion(users))
           dispatch(updateQuestionQuestion(questions))
+          dispatch(setAuthedUser('sarahedo'))
           dispatch(apiEnd(GET_QUESTIONS))
         })
       }
@@ -53,7 +54,6 @@ import { GET_QUESTIONS,APP_INIT,UPDATE_ANSWER } from "../constants/actionTypes";
           dispatch(apiStart(APP_INIT))
           dispatch(getUsers(users))
           dispatch(getQuestions(questions))
-          dispatch(setAuthedUser(''))
           dispatch(apiEnd(APP_INIT))
         })
     }

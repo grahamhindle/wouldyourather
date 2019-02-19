@@ -7,6 +7,7 @@ import { sortUsersByScore } from '../selectors/scorecard';
 const DashboardContainer = props => <Dashboard  {...props} />
 
 const mapStateToProps = (state,props)=> {
+  console.log('mstp',state)
   return {
     author:state.authedUser,
     users: Object.values(state.users),

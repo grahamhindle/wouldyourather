@@ -1,45 +1,10 @@
 import React from "react"
-import _ from 'lodash'
 import {withStyles} from '@material-ui/core'
 import DashboardPanel from './DashboardPanel'
 import {Paper} from '@material-ui/core'
 
 
 const styles =theme => ({
-  root: {
-    
-    border: '1px solid blue',
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-    
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-  button: {
-    margin: theme.spacing.unit,
-  },
-  leftIcon: {
-    marginRight: theme.spacing.unit,
-  },
-  rightIcon: {
-    marginLeft: theme.spacing.unit,
-  },
-  iconSmall: {
-    fontSize: 20,
-  },
-  avatar: {
-    margin: 10,
-  },
-  bigAvatar: {
-    margin: 5,
-    width: 90,
-    height: 90,
-  },
   paper: {
     margin:'auto',
     marginTop: '100px',
@@ -56,13 +21,11 @@ const styles =theme => ({
 
 
 const Dashboard = (props) => {
-  
+  console.log(props)
   const {classes} =props
   let count = 0
   return(
     <Paper className={classes.paper}>
-    
-
       {props.scores.map((user)=> 
       <DashboardPanel 
         key={user.id}

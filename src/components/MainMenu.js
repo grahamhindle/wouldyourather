@@ -19,55 +19,59 @@ const styles = {
       flex:1,
     },
   }
-
-
 class MainMenu extends React.Component {
-
-    handleChange = () => {
-      
+  state={
+    disableMenuItem: true,
+    value: 'login'
+  }
+  
+    handleChange = (event,value) => {
+      this.setState({ value });
     }
+    
 
   render() {
     
    
     const { classes } = this.props
+    const {value } = this.state
     return (
       <BottomNavigation
-        
         onChange={this.handleChange}
         showLabels
+        value={value}
         className={classes.stickToBottom}
         >
         <BottomNavigationAction 
           component={Link} 
           to="/"
-          label="Home" 
-          
-          icon={<FontAwesomeIcon icon="home" color='inherit' disabled  />}/>
+          label="Home"
+          icon={<FontAwesomeIcon icon="home" color='inherit'/>}
+        />
         <BottomNavigationAction 
           component={Link} 
           to="/newq"
           label="NewQuestion" 
-          
-          icon={<FontAwesomeIcon icon="question-square" color='inherit' disabled  />}/>
+          icon={<FontAwesomeIcon icon="question-circle" color='inherit'/>}
+        />
         <BottomNavigationAction 
           component={Link} 
           to="/score"
           label="Score" 
-          
-          icon={<FontAwesomeIcon icon="tachometer" color='inherit' disabled  />} />
-      
+          icon={<FontAwesomeIcon icon="tachometer-alt" color='inherit'/>} 
+        />
         <BottomNavigationAction 
         component={Link} 
           to="/profile"
           label= "Sign In"
-          icon={<FontAwesomeIcon icon="sign-in" color='inherit' disabled  />}/>
-      
+          icon={<FontAwesomeIcon icon="sign-in-alt" color='inherit'/>}
+        />
         <BottomNavigationAction 
           component={Link} 
-            to="/startup"
-            label= {'Demo mode'}
-            icon={<FontAwesomeIcon icon="info-circle" color='inherit' disabled  />}/>
+          to="/startup"
+          label= {'Demo mode'}
+          icon={<FontAwesomeIcon icon="info-circle" color='inherit'/>}
+        />
       </BottomNavigation> 
     )
   }

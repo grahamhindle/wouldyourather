@@ -13,6 +13,7 @@ const styles = theme => ({
     root: {
       flex: 1,
       backgroundColor: 'white',
+      border: '1px solid blue',
       marginTop:'200px',
       width:'50%',
       marginLeft:'25%'

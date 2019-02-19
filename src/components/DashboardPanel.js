@@ -1,24 +1,23 @@
 import React from 'react'
-import { GridList,Divider,CardContent,Card,CardHeader, ButtonBase,Typography,Grid, ListItem ,ListItemAvatar,ListItemText,Avatar,Paper}from '@material-ui/core'
+import { Divider,CardContent,Card,CardHeader, ButtonBase,Typography,Grid, Avatar,Paper}from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
-import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrophy } from '@fortawesome/pro-regular-svg-icons'
+import { faTrophy } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faTrophy)
+
 
 
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    
 
   },
   paper: {
     padding: theme.spacing.unit * 2,
     margin: 'auto',
-    width: '750px',
+    width: '100%',
+    height: '50%',
     border: '2px solid blue'
   },
   image: {
@@ -26,13 +25,13 @@ const styles = theme => ({
     height: 128,
   },
   bigAvatar: {
-    marginTop: '25px', 
+    marginTop: '50px', 
     width: 75,
     height: 75,
   },
   card: {
     maxWidth: 400,
-    border: '2px solid blue'
+    border: '1px solid blue'
   },
   cardHeader: {
     flex:1,
@@ -96,7 +95,7 @@ const DashboardPanel= props =>(
               <Grid item xs>
                 
                 <Card >
-                  <CardHeader  style={{ fontSize: '12px' }}className={props.classes.cardHeader} title={props.name}/>
+                  <CardHeader  style={{ fontSize: '8px' }}className={props.classes.cardHeader} title={props.name}/>
                   <Divider/>
                   <CardContent className={props.classes.cardDetail}>
                     <Typography   variant='subtitle1' color="inherit" gutterBottom>
@@ -130,13 +129,10 @@ const DashboardPanel= props =>(
                         <Typography   direction='row' variant='subtitle1' color="inherit" gutterBottom>
                       {`You are currently number  ${props.position} `}
                       </Typography>
-                      
                         </Grid>
                       </Grid>
                     </Grid>
-
                   </CardContent>
-                  
                 </Card>
               </Grid>
             </Grid>
