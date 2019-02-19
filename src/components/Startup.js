@@ -11,14 +11,15 @@ import { Card,
 const styles = theme => ({
   card: {
     flexGrow: 1,
-    maxWidth: '100%',
+    backgroundColor: 'white',
+    border: '1px solid blue',
   },
   cardAction: {
     display: 'block',
     textAlign: 'initial'
   },
   media: {
-
+    
     height: '50%',
     paddingTop: '56.25%', // 16:9
     
@@ -51,7 +52,7 @@ class  Startup extends Component {
     const {classes} = this.props
     return(
  
-    <div style={{height:'50%', width:'50%' , marginTop:'100px' ,                    marginLeft:'25%'}}>
+    <div style={{height:'50%', width:'50%' , marginTop:'100px' ,                    marginLeft: '25%', color:'white'}}>
     <StyledLink
       style={{color:'#FFFFFF', decoration:'none'}}
       to={'/profile'}
@@ -62,18 +63,18 @@ class  Startup extends Component {
         <CardMedia
           className={classes.media}
           style={{height: 400}}
-          image={require("../images/homescreen.png")}
-          title="Paella dish"
+          image={require("../images/demo.png")}
+          title="demo screen"
           >
           </CardMedia>
-        <CardContent>
-          <Typography gutterBottom variant="headline" component="h2">
+        
+          <Typography align='center' gutterBottom variant="headline" component="h2">
             A game of decisions
           </Typography>
-          <Typography component="p">
-            Click anywhere to Login
+          <Typography align='center' component="p">
+            Click anywhere on the question panel to Logon
           </Typography>
-        </CardContent>
+       
       </Card>
       </StyledLink>
       

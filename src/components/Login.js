@@ -109,7 +109,7 @@ class Login extends Component {
         ))} 
         <Divider/>
         {this.state.loggedOn && 
-          <Link to="/" style={{color:'#FFFFFF', decoration:'none'}} >Home</Link>
+          <Link to="/questions" style={{color:'#FFFFFF', decoration:'none'}} >Home</Link>
         }
         <Tooltip title={tbdText}>
         <Button variant='contained'  className={classes.button} aria-label="Login" color="primary">

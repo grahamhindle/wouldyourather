@@ -44,7 +44,7 @@ class MainMenu extends React.Component {
         >
         <BottomNavigationAction 
           component={Link} 
-          to="/"
+          to="/questions"
           label="Home"
           icon={<FontAwesomeIcon icon="home" color='inherit'/>}
         />
@@ -68,7 +68,7 @@ class MainMenu extends React.Component {
         />
         <BottomNavigationAction 
           component={Link} 
-          to="/startup"
+          to="/"
           label= {'Demo mode'}
           icon={<FontAwesomeIcon icon="info-circle" color='inherit'/>}
         />

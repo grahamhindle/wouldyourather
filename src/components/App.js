@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, } from 'react-router-dom'
 import StyledHomeContainer from '../styled/StyledHomeContainer'
 import QuestionsContainer from '../containers/QuestionsContainer'
 import LoginContainer from '../containers/LoginContainer'
@@ -15,8 +15,8 @@ const App = (props) => {
   return (
   <StyledHomeContainer >
     <Route exact path = '/profile' component={LoginContainer} />
-    <Route exact path = '/startup' component={Startup } />
-    <Route exact path = '/' component={QuestionsContainer} />
+    <Route exact path = '/questions' component={QuestionsContainer } />
+    <Route exact path = '/' component={Startup} />
     <Route exact path = '/newq' component={NewQuestionContainer} />
     <Route exact path = '/score' component={DashboardContainer} />
     <MainMenuContainer />

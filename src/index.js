@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Root from './containers/Root'
 import * as serviceWorker from './serviceWorker'
 import { library } from '@fortawesome/fontawesome-svg-core'
-
+import 'typeface-roboto'
 
 import { faTachometerAlt, faHome,faSignInAlt,faQuestionCircle,faTrophy,faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 
