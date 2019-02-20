@@ -1,5 +1,27 @@
+
+  
+
 const theme = {
-  primaryBg: "#e0e0e0",
-  secondaryBg: "#9e9e9e",
+  spacing:4,
+  palette: {
+    primary:{
+      light: '#63ccff',
+      main: '#0097a7',
+      dark:'#006db3',
+      contrastText: '#fff',
+    },
+    shape: {
+      borderRadius: 8,
+      border: '1px solid blue',
+    }
+  },
+  overrides:{
+    MuiAppBar: {
+      paper:{
+        background:'#18202c',
+      },
+    },
+  },
 }
+  
 export default theme

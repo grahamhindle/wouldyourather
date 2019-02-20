@@ -3,7 +3,6 @@ import { persistStore } from 'redux-persist'
 import rootReducer from '../reducers'
 import logger from 'redux-logger'
 import DevTools from '../containers/DevTools'
-
 import thunk from 'redux-thunk'
 
 
@@ -24,6 +23,7 @@ const configureStore = initialState => {
   }) 
   const persiststore = persistStore(store)
       return { store, persiststore }
+      
   }
 }
 export default configureStore

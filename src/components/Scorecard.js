@@ -161,6 +161,7 @@ class SimpleDialog extends React.Component {
 
   render() {
     const { classes, votes,  author, question } = this.props;
+    console.log('votes',votes)
     return (
       <div className={classes.root} style={{backgroundColor:'#D5DBDB'}}>
       <Dialog  fullWidth={true}

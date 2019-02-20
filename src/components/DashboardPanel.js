@@ -1,17 +1,13 @@
 import React from 'react'
 import { Divider,CardContent,Card,CardHeader, ButtonBase,Typography,Grid, Avatar,Paper}from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
+import StyledResult from '../styled/StyledResult'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrophy } from '@fortawesome/free-solid-svg-icons'
-
-
-
-
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-
   },
   paper: {
     padding: theme.spacing.unit * 2,
@@ -40,7 +36,6 @@ const styles = theme => ({
     backgroundColor: 'white',
     textColor:'black',
     fontSize: '12px',
-    
   },
   cardDetail: {
     flex:1,
@@ -49,22 +44,7 @@ const styles = theme => ({
     textAlign: 'center',
     backgroundColor: 'white',
     textColor:'black',
-    
-    
   },
-
-  circleText:{
-    /* circle styles */
-  width: '75px',
-  height: '75px',
-  marginLeft: '50px',
-  border: '1px solid blue',
-  borderRadius: '50%',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-},
   img: {
     margin: 'auto',
     display: 'block',
@@ -72,6 +52,14 @@ const styles = theme => ({
     maxHeight: '100%',
   },
 })
+
+
+/*
+ <div className={props.classes.circleText} style={{ backgroundColor: props.position === 1 ? '#ffc400':props.position === 2? '#C0C0C0': '#cd7f32' }} >
+                        {props.questions+props.answers}
+                        
+                    </div>	
+                    */
 const DashboardPanel= props =>(
   
    <div className={props.classes.root}>
@@ -119,10 +107,9 @@ const DashboardPanel= props =>(
                   <CardHeader variant='h6' className={props.classes.cardHeader} title={'Score'}/>
                   <Divider/>
                   <CardContent>
-                    <div className={props.classes.circleText} style={{ backgroundColor: props.position === 1 ? '#ffc400':props.position === 2? '#C0C0C0': '#cd7f32' }} >
-                        {props.questions+props.answers}
-                        
-                    </div>	
+                   <StyledResult style={{ backgroundColor: props.position === 1 ? '#ffc400':props.position === 2? '#C0C0C0': '#cd7f32' }}>
+                    {props.questions+props.answers}  
+                   </StyledResult>
                     <Grid item xs={'auto'} sm container>
                       <Grid item xs container direction="column" spacing={8}>
                         <Grid item xs>

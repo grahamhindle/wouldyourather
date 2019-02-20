@@ -13,12 +13,12 @@ import ProgressLoader from '../components/ProgressLoader';
 
 
 
+
  
 const Root = () => {
-  
   return (
     <Provider store={store}>
-      <PersistGate persistor={persiststore} loading={<ProgressLoader/>}>
+    <PersistGate persistor={persiststore} loading={<ProgressLoader/>}>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
       <StyledContainer>

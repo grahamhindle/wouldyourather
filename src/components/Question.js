@@ -70,6 +70,7 @@ class Question extends Component {
   }
   componentDidMount() {
     //set initial state
+    console.log('option', this.props.answer)
     this.setState({value: this.props.answer});
   }
 

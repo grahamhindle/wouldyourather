@@ -16,11 +16,12 @@ export const selectAuthor = createSelector(
 export const getAnswerText = createSelector(
   [getAnswers,(state,props) => props],
   (answers,props) => {
-    const obj = Object.keys(answers).find(key=> key === props.question.id)
-    if (obj && props.answered){
+    const obj = Object.keys(answers).find(key => key === props.question.id)
+    
+    if ( typeof obj !== 'undefined'){
+      console.log('obj',obj)
       return answers[obj]
-  }
-    else return 'optionOne'
+    }
   }
 )
 

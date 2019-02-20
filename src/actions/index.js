@@ -4,7 +4,7 @@ import { getUsers, updateUserQuestion, updateUserAnswer } from './userActions'
 import { setAuthedUser } from './authedUserActions'
 import { _saveQuestion, getInitialData, _saveQuestionAnswer} from '../utils/_Data'
 import { apiStart, apiEnd } from './apiActions'
-import { GET_QUESTIONS,APP_INIT,UPDATE_ANSWER } from "../constants/actionTypes";
+import { GET_QUESTIONS,APP_INIT,UPDATE_ANSWER,UPDATE_QUESTION_ANSWER } from "../constants/actionTypes";
 
 
   export function saveNewQuestion(question) {
@@ -40,8 +40,10 @@ import { GET_QUESTIONS,APP_INIT,UPDATE_ANSWER } from "../constants/actionTypes";
     return (dispatch) => {
       return saveNewQuestion(question)
         .then(({questions,users}) => {
+          dispatch(apiStart(UPDATE_QUESTION_ANSWER))
           dispatch(getUsers(users))
           dispatch(getQuestions(questions))
+          dispatch(apiEnd(UPDATE_QUESTION_ANSWER))
         })
       }
   }
@@ -54,6 +56,7 @@ import { GET_QUESTIONS,APP_INIT,UPDATE_ANSWER } from "../constants/actionTypes";
           dispatch(apiStart(APP_INIT))
           dispatch(getUsers(users))
           dispatch(getQuestions(questions))
+          dispatch(setAuthedUser('sarahedo'))
           dispatch(apiEnd(APP_INIT))
         })
     }

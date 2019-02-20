@@ -3,6 +3,7 @@ import {Paper,Button, TextField} from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
+import {Link } from 'react-router-dom'
 
 
 
@@ -117,8 +118,9 @@ class NewQuestion extends Component {
     const {optionOneText,optionTwoText} = this.state
     const { author} = this.props
     this.props.saveNewQuestion({optionOneText, optionTwoText,author})
+    // now clear the entry fields
+    this.setState({ optionOneText: '', optionTwoText:'' });
   }
-
   
   render() {
     const { classes} = this.props
@@ -135,6 +137,7 @@ class NewQuestion extends Component {
         onChange={this.handleChange('optionOneText')}
           id="standard-with-placeholder"
           label="Would You Rather"
+          value={this.state.optionOneText}
           placeholder="Option One"
           className={classes.textField}
           margin="normal"
@@ -144,6 +147,7 @@ class NewQuestion extends Component {
         onChange={this.handleChange('optionTwoText')}
         id="standard-with-placeholder"
         label="Or..."
+        value={this.state.optionTwoText}
         placeholder="Option Two"
         className={classes.textField}
         margin="normal"
@@ -152,13 +156,17 @@ class NewQuestion extends Component {
         <Button  variant="contained" size="small"  className={classes.button} onClick={this.handleQuestion}>
           Submit
         </Button>
-        <Button  variant="contained" size="small"  className={classes.button}>
+        <Link to={'/questions'}style={{color:'#FFFFFF',decoration:'none'}} >
+        <Button  variant="contained" size="small"  
+          className={classes.button}
+        >
           Cancel
         </Button> 
+        </Link>
       </Grid>
       <Grid item xs={12}>
       <Typography className={classes.container} variant="body1" color="inherit"  >
-      If you enter a question make sure both option one and Option two are entered WE DO NOT valid for valid questions at this time</Typography>
+      If you enter a question make sure both Option one and Option two are entered WE DO NOT valid for valid questions at this time</Typography>
       </Grid>
         </form>
          </Paper>

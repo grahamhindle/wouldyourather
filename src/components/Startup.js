@@ -1,11 +1,7 @@
 import React, {Component} from 'react'
 import StyledLink from '../styled/StyledLink'
-import { Card,
-        CardMedia,
-        CardContent,
-        Typography,
-        } from '@material-ui/core'
-        import { withStyles } from '@material-ui/core/styles';
+import { Card,CardMedia,Typography } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles';
        
 
 const styles = theme => ({

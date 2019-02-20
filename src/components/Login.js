@@ -116,7 +116,7 @@ class Login extends Component {
 
         {' Register  '} 
        
-        <FontAwesomeIcon className={classes.rightIcon} icon="sign-in"/>
+        <FontAwesomeIcon className={classes.rightIcon} icon="sign-in-alt"/>
         </Button>
         </Tooltip>
       </List>
