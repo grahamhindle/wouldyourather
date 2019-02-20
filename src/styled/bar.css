@@ -1,5 +1,5 @@
 .bar-label {
-  color: red;
+  color: white;
   font-family: 'Titillium Web', sans-serif;
   letter-spacing: 1px;
   font-weight: normal;
@@ -9,7 +9,7 @@
 }
 .bar-suffix {
 display: inline-block;
-  color: black;
+  color: #2a2abe;
   font-family: 'Titillium Web', sans-serif;
   letter-spacing: 1px;
   font-weight: bold;

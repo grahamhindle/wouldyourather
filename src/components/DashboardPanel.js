@@ -54,12 +54,7 @@ const styles = theme => ({
 })
 
 
-/*
- <div className={props.classes.circleText} style={{ backgroundColor: props.position === 1 ? '#ffc400':props.position === 2? '#C0C0C0': '#cd7f32' }} >
-                        {props.questions+props.answers}
-                        
-                    </div>	
-                    */
+
 const DashboardPanel= props =>(
   
    <div className={props.classes.root}>

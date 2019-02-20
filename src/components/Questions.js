@@ -69,7 +69,7 @@ class  Questions extends Component {
       this.setState({value: value}); 
     }
   render(){
-    const { classes,  questions} = this.props
+    const { classes,  questions, } = this.props
     
     const {value} =this.state.value
     return (
@@ -97,6 +97,7 @@ class  Questions extends Component {
           <QuestionContainer key={question.id} 
             question={question}
             answered={this.state.value}
+
             >
             </QuestionContainer>
           </div>

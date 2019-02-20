@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styled/bar.css'
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
@@ -101,7 +100,7 @@ const styles = theme =>({
   },
   barLabel: {
     font:"8px 'opensans-bold', sans-serif",
-    backGroundColor: 'red',
+    color: 'blue'
   },
   icon: {
     flex:1,
@@ -119,13 +118,13 @@ class SimpleDialog extends React.Component {
     optionOne: [
         {label:"75%", 
         value:75, 
-        barColor:'blue',  
+        barColor:blue,  
         barHeight: 32,
         makeUppercase: false,
         suffix:'%'},
     ],
     optionTwo: [
-      {label:"75%", value:75, barColor:'black',  barHeight: 32, makeUppercase: false,suffix:'%'},
+      {label:"75%", value:75, barColor:blue,  barHeight: 32, makeUppercase: false,suffix:'%'},
     ],
   }
   handleClose = () => {
@@ -140,24 +139,13 @@ class SimpleDialog extends React.Component {
 
 
   componentDidMount(){
-    
-    this.setState(state => {
-      const one = state.optionOne.map(label => {
-        label.label = `${this.props.votes.opt1percent}%`
-        label.value = this.props.votes.opt1percent
-      })
-      return one
-    })
 
-    this.setState(state => {
-      const two = state.optionTwo.map(label => {
-        label.label = `${this.props.votes.opt2percent}%`
-        label.value = this.props.votes.opt2percent
-      })
-      return two
-    })
-  }
-
+      this.setState ( {
+        optionOne : [{value: Number(this.props.votes.opt1percent),label:String(this.props.votes.opt1percent)+ '%'}],
+        optionTwo : [{value: Number(this.props.votes.opt2percent),label:String(this.props.votes.opt2percent) +'%'}]
+      })  
+      
+}
 
   render() {
     const { classes, votes,  author, question } = this.props;
@@ -188,7 +176,7 @@ class SimpleDialog extends React.Component {
                     {question.optionOne.text}
                   </Typography>
                   <div >
-                  <Bars  data={this.state.optionOne} makeUppercase={true} />
+                  <Bars data={this.state.optionOne} barColor={'#2a2abe'} />
                   </div>
                   <Typography color='inherit' variant='body1' gutterBottom >
                     {`${votes.opt1} out of ${votes.opt1+votes.opt2} votes`}
@@ -209,7 +197,7 @@ class SimpleDialog extends React.Component {
                     {question.optionTwo.text}
                   </Typography>
                   <div >
-                    <Bars  data={this.state.optionOne} makeUppercase={true} />
+                  <Bars data={this.state.optionTwo} barColor={'#2a2abe'}  />
                   </div>
                     <Typography color='inherit' variant='body1' gutterBottom>
                       {`${votes.opt2} out of ${votes.opt1+votes.opt2} votes`}
