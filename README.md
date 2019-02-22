@@ -1,16 +1,17 @@
-# wouldyourather
-    This project is an implementtion of the popular Would You Rather decision making game. The user answers question which have 2 options to chhose from. 
+# Would You Rather
 
-    After loggin on, you will be pressented with questions that you have answered and those that you still have to answer. It is not possible to change ypur mind after answering a question so rembmer to give it a litle thought. 
 
-    A leader board is provided that gives you your position and yopiur score is calculated as a total of questions you have answered and questions you have submitted. 
-
-    ![image](/src/images/demo.png)
-
-    
+This project is an application that implemets the popular game of decisions.
+You are presented with a list of questions submitted by other users, and you must select one of the options presented.
+You can also : 
+        
+* submit new question - you must format the questions with a clear option to choose
+* view the result of each question
+* see where you stand on the leader board
+        
+![Example screen ]('../images/demo.png')
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -53,28 +54,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# wouldyourather
+# bookshelf
