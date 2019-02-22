@@ -56,7 +56,7 @@ import { GET_QUESTIONS,APP_INIT,UPDATE_ANSWER,UPDATE_QUESTION_ANSWER } from "../
           dispatch(apiStart(APP_INIT))
           dispatch(getUsers(users))
           dispatch(getQuestions(questions))
-          dispatch(setAuthedUser('sarahedo'))
+          dispatch(setAuthedUser(''))
           dispatch(apiEnd(APP_INIT))
         })
     }

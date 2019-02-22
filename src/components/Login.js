@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import List from '@material-ui/core/List'
 import { ListItem, ListSubheader} from '@material-ui/core'
-import {ListItemAvatar ,Avatar, Tooltip } from '@material-ui/core'
+import {ListItemAvatar ,Avatar, Tooltip,Typography, Paper } from '@material-ui/core'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
 import Button from '@material-ui/core/Button'
@@ -14,6 +14,7 @@ const tbdText = `Not yet implemented`
 
 const styles = theme => ({
   root: {
+    flex: 1,
     margin:'auto',
     marginTop: '100px',
     padding: '20px',
@@ -77,7 +78,7 @@ class Login extends Component {
     const { classes, users} = this.props
   
   return (
-    <div className={classes.root}>
+    <Paper className='classes.root'>
      
         <List
           component="nav"
@@ -120,8 +121,11 @@ class Login extends Component {
         </Button>
         </Tooltip>
       </List>
-   
-  </div>
+        <Typography color='secondary'>
+          You must login to continue to use Would You Rather
+        </Typography>
+
+  </Paper>
   )
       }
 }

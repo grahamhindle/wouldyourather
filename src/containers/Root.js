@@ -7,7 +7,7 @@ import StyledContainer from '../styled/StyledContainer'
 import { GlobalStyle } from '../injectGlobalStyles'
 import { ThemeProvider } from 'styled-components'
 import theme from '../constants/theme'
-import App from '../components/App'
+import AppContainer from '../containers/AppContainer'
 import { PersistGate} from 'redux-persist/integration/react'
 import ProgressLoader from '../components/ProgressLoader';
 
@@ -23,7 +23,7 @@ const Root = () => {
       <ThemeProvider theme={theme}>
       <StyledContainer>
         <Router>
-          <App />
+          <AppContainer />
         </Router>
         <DevTools />
       </StyledContainer>
