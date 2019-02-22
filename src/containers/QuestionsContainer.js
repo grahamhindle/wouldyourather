@@ -8,7 +8,7 @@ import {GET_QUESTIONS } from '../constants/actionTypes'
 const QuestionsContainer = props => <Questions {...props} />
 
 const mapStateToProps = ({questions,users,isLoading}) => ({
-  questions: _.values(questions),
+  questions: _.shuffle(_.values(questions)),
   users ,
   loading: isLoading[GET_QUESTIONS]
 })
