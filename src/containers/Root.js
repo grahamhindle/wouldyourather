@@ -25,7 +25,7 @@ const Root = () => {
         <Router>
           <AppContainer />
         </Router>
-        <DevTools />
+        { /* <DevTools /> */ }
       </StyledContainer>
       </ThemeProvider>
       </PersistGate>

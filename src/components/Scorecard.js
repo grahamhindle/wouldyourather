@@ -13,6 +13,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Bars from 'react-bars'
 import Icon from '@material-ui/core/Icon';
 import classNames from 'classnames';
+import produce from 'immer';
 
 
 const DialogTitle = withStyles(theme => ({
@@ -112,46 +113,58 @@ const styles = theme =>({
   },
 })
 
+const score = (state,props ) => produce(state,(draft)=> {
+  draft[0].value= props.votes.opt1percent
+  draft[0].label=String(props.votes.opt1percent)+ '%'
+  draft[1].value= props.votes.opt2percent
+  draft[1].label=String(props.votes.opt2percent)+ '%'
+
+  
+  
+})
 
 class SimpleDialog extends React.Component {
-  state={
-    optionOne: [
-        {label:"75%", 
-        value:75, 
-        barColor:blue,  
-        barHeight: 32,
-        makeUppercase: false,
-        suffix:'%'},
-    ],
-    optionTwo: [
-      {label:"75%", value:75, barColor:blue,  barHeight: 32, makeUppercase: false,suffix:'%'},
-    ],
+  state= {
+    barData:[
+       {
+          label:"75%", 
+          value:75, 
+          barColor:blue,  
+          barHeight: 32,
+          makeUppercase: false,
+          suffix:'%'
+      },
+      {
+          label:"75%", 
+          value:75, 
+          barColor:blue,  
+          barHeight: 32, 
+          makeUppercase: 
+          false,suffix:'%'
+      },
+    ]
   }
+
   handleClose = () => {
     this.props.onClose();
   };
 
   handleListItemClick = value => {
-    this.props.onClose(value);
+    this.props.onClose(value)
   }
 
   
-  static getDerivedStateFromProps(props, state) {
-    this.setState ( {
-      optionOne : [{value: Number(this.props.votes.opt1percent),label:String(this.props.votes.opt1percent)+ '%'}],
-      optionTwo : [{value: Number(this.props.votes.opt2percent),label:String(this.props.votes.opt2percent) +'%'}]
-    })  
-  }
-
- /* componentDidMount(){
-
-      this.setState ( {
-        optionOne : [{value: Number(this.props.votes.opt1percent),label:String(this.props.votes.opt1percent)+ '%'}],
-        optionTwo : [{value: Number(this.props.votes.opt2percent),label:String(this.props.votes.opt2percent) +'%'}]
-      })  
+  static getDerivedStateFromProps(nextProps, state) {
       
-}
-*/
+       
+       state.barData = score(state.barData,nextProps)
+        
+      
+   console.log('after', state.barData)
+  }
+  
+
+ 
 
   render() {
     const { classes, votes,  author, question } = this.props;
@@ -182,7 +195,7 @@ class SimpleDialog extends React.Component {
                     {question.optionOne.text}
                   </Typography>
                   <div >
-                  <Bars data={this.state.optionOne} barColor={'#2a2abe'} />
+                  <Bars data={Object.values(this.state.barData[0])} barColor={'#2a2abe'} />
                   </div>
                   <Typography color='inherit' variant='body1' gutterBottom >
                     {`${votes.opt1} out of ${votes.opt1+votes.opt2} votes`}
@@ -203,7 +216,7 @@ class SimpleDialog extends React.Component {
                     {question.optionTwo.text}
                   </Typography>
                   <div >
-                  <Bars data={this.state.optionTwo} barColor={'#2a2abe'}  />
+                  <Bars data={Object.values(this.state.barData[1])} barColor={'#2a2abe'}  />
                   </div>
                     <Typography color='inherit' variant='body1' gutterBottom>
                       {`${votes.opt2} out of ${votes.opt1+votes.opt2} votes`}
