@@ -14,17 +14,20 @@ const tbdText = `Not yet implemented`
 
 const styles = theme => ({
   root: {
-    flex: 1,
-    margin:'auto',
+    flexGrow:1,
+    width: '100%',
+    maxWidth: '360px',
+    margin:'25%',
     marginTop: '100px',
     padding: '20px',
     backgroundColor: '#eeeeee',
-    width: '25%',
     maxHeight: '500px',
     overflow: 'scroll',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
+  
   subheader:{
     backgroundColor: 'inherit',
     border: '1px solid blue',
@@ -78,7 +81,8 @@ class Login extends Component {
     const { classes, users} = this.props
   
   return (
-    <Paper className='classes.root'>
+    <div className={classes.root}>
+    
      
         <List
           component="nav"
@@ -125,7 +129,7 @@ class Login extends Component {
           You must login to continue to use Would You Rather
         </Typography>
 
-  </Paper>
+  </div>
   )
       }
 }
