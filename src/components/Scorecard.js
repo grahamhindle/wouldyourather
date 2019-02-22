@@ -136,9 +136,14 @@ class SimpleDialog extends React.Component {
   }
 
   
+  static getDerivedStateFromProps(props, state) {
+    this.setState ( {
+      optionOne : [{value: Number(this.props.votes.opt1percent),label:String(this.props.votes.opt1percent)+ '%'}],
+      optionTwo : [{value: Number(this.props.votes.opt2percent),label:String(this.props.votes.opt2percent) +'%'}]
+    })  
+  }
 
-
-  componentDidMount(){
+ /* componentDidMount(){
 
       this.setState ( {
         optionOne : [{value: Number(this.props.votes.opt1percent),label:String(this.props.votes.opt1percent)+ '%'}],
@@ -146,6 +151,7 @@ class SimpleDialog extends React.Component {
       })  
       
 }
+*/
 
   render() {
     const { classes, votes,  author, question } = this.props;
