@@ -8,11 +8,24 @@ You can also :
 * submit new question - you must format the questions with a clear option to choose
 * view the result of each question
 * see where you stand on the leader board
-        
-![Example screen ]('../images/demo.png')
+
+# Limitations
+* At present there is no functionality to register new users. 
+* There is **no validation** on each question to determine its correctness - please be careful
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Available Scripts
+
+### Installation
+To install the application , you can run:
+
+### `npm install` or `yarn` from your terminal
+
+please make sure you have compatible <br>
+versions of npm or yarn as well as node
+
 
 In the project directory, you can run:
 
