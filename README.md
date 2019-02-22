@@ -1,3 +1,14 @@
+# wouldyourather
+    This project is an implementtion of the popular Would You Rather decision making game. The user answers question which have 2 options to chhose from. 
+
+    After loggin on, you will be pressented with questions that you have answered and those that you still have to answer. It is not possible to change ypur mind after answering a question so rembmer to give it a litle thought. 
+
+    A leader board is provided that gives you your position and yopiur score is calculated as a total of questions you have answered and questions you have submitted. 
+
+    ![image](/src/images/demo.png)
+
+    
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
