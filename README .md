@@ -1,7 +1,7 @@
 # Would You Rather
 
 
-This project is an application that implemets the popular game of decisions.
+This project is an application that implements the popular game of decisions.
 You are presented with a list of questions submitted by other users, and you must select one of the options presented.
 You can also : 
         
@@ -9,11 +9,27 @@ You can also :
 * view the result of each question
 * see where you stand on the leader board
 
+## Questions screen
+
+![demo](src/images/demo.png)
+
 # Limitations
 * At present there is no functionality to register new users. 
 * There is **no validation** on each question to determine its correctness - please be careful
 
-
+# Background
+This project is part of my React nanodegree from Udacity. It is constructed using a number of libraries and tools 
+* React
+* Redux - for state management
+* PersistGate - for local storage
+* Material-UI - UI components
+* Reselect - for memoizing state selection
+* immer -for immutability
+* styled-components - for inline CSS styling
+* lodash for object & array manipulation
+* fontAwesome - icons 
+  
+  I have used this project to develop a standard set of tools to develop future React applications. There is a lot of experimentation that is a work in progress and will be refined as i develop future applications
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Available Scripts
@@ -67,4 +83,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-# bookshelf
+# Would You Rather
