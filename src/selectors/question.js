@@ -19,7 +19,7 @@ export const getAnswerText = createSelector(
     const obj = Object.keys(answers).find(key => key === props.question.id)
     
     if ( typeof obj !== 'undefined'){
-      console.log('obj',obj)
+     
       return answers[obj]
     }
   }

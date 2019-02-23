@@ -32,7 +32,7 @@ const styles =theme => ({
 
 function AppBarControl(props) {
   const { classes ,user} = props
-  console.log(props)
+  
 
   
   return (

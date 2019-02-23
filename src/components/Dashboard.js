@@ -21,7 +21,7 @@ const styles =theme => ({
 
 
 const Dashboard = (props) => {
-  console.log(props)
+  
   const {classes} =props
   let count = 0
   return(

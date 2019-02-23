@@ -4,14 +4,15 @@ import { connect } from 'react-redux'
 import Question from '../components/Question'
 import { selectAuthor, getAnswerText} from '../selectors/question'
 import { updateAnswer } from '../actions'
+import LoginContainer from '../containers/LoginContainer'
 
 
-const QuestionContainer = props => <Question {...props} />
+const QuestionContainer = props => props.authedUser ? <Question {...props} /> : <LoginContainer />
 
 
 
 const mapStateToProps = (state,props) => {
-  console.log('getAnswerText', props)
+
   return {
   questions: _.shuffle(_.values(state.questions)),
   users:    state.users,

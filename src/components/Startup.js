@@ -48,7 +48,7 @@ class  Startup extends Component {
     const {classes} = this.props
     return(
  
-    <div style={{height:'50%', width:'50%' , marginTop:'100px' ,                    marginLeft: '25%', color:'white'}}>
+    <div style={{height:'50%', width:'50%' , marginTop:'100px' , marginLeft: '25%', color:'white'}}>
     <StyledLink
       style={{color:'#FFFFFF', decoration:'none'}}
       to={'/profile'}

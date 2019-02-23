@@ -36,7 +36,7 @@ export const votesForQuestion = createSelector(
 
     const match1 = _.find(props.optionOne.votes, key => key === user)
 
-    console.log(match1)
+    
     return {opt1,opt2, opt1percent,opt2percent,match1}
   }
 )
@@ -70,9 +70,9 @@ export const votes = createSelector(
 export const sortUsersByScore = createSelector(
   getUsers,
   (users) =>{
-    console.log('subs', users)
+    
     const obj = Object.values(users)
-    console.log('before',obj)
+    
     obj.sort((a,b)  => 
       (Object.keys(a.answers).length + a.questions.length) < 
       (Object.keys(b.answers).length + b.questions.length) ? 1 : -1
