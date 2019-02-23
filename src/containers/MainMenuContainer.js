@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import MainMenu from '../components/MainMenu'
 import AppBarControl from '../components/AppBarContol'
 import { getLoggedOnUser } from '../selectors/scorecard';
+import { setAuthedUser } from '../actions/authedUserActions';
 
 const MainMenuContainer = props => <div><MainMenu {...props} /><AppBarControl {...props}/></div>
 
@@ -15,4 +16,5 @@ const mapStateToProps = (state,props)=> {
 }
 export default connect(
   mapStateToProps,
+  {setAuthedUser}
 )(MainMenuContainer);

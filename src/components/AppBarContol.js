@@ -7,6 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button'
 import StyledAppBar from '../styled/StyledAppBar'
+import { _setAuthedUser } from '../utils/_Data';
 
 
 
@@ -28,12 +29,15 @@ const styles =theme => ({
   },
 })
 
-
+const handleClick=()=> {
+  
+ 
+ }
 
 function AppBarControl(props) {
   const { classes ,user} = props
   
-
+  console.log(props)
   
   return (
     <div className={classes.root}>
@@ -46,7 +50,9 @@ function AppBarControl(props) {
              Welcome { typeof user !== 'undefined' ? user.name: 'login to contine'}
           </Typography>
           <Link to={'/profile'} style={{color:'lightgray',decoration:'none'}}>
-          <Button  color="primary" className={classes.button}>
+          <Button  color="primary" className={classes.button}
+          onClick={() => props.setAuthedUser('')}
+          >
             Logoff
             <Avatar 
               alt={`Avatar n°${typeof user !== 'undefined' ?user.name + 1: ''}`}

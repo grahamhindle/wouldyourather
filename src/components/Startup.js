@@ -61,6 +61,7 @@ class  Startup extends Component {
           style={{height: 400}}
           image={require("../images/demo.png")}
           title="demo screen"
+          onClick={this.handleClick}
           >
           </CardMedia>
         
