@@ -50,7 +50,7 @@ class MainMenu extends React.Component {
         />
         <BottomNavigationAction 
           component={Link} 
-          to="/newq"
+          to="/add"
           label="NewQuestion" 
           icon={<FontAwesomeIcon icon="question-circle" color='inherit'/>}
         />
