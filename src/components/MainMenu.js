@@ -56,8 +56,8 @@ class MainMenu extends React.Component {
         />
         <BottomNavigationAction 
           component={Link} 
-          to="/score"
-          label="Score" 
+          to="/leaderboard"
+          label="Leader Board" 
           icon={<FontAwesomeIcon icon="tachometer-alt" color='inherit'/>} 
         />
         <BottomNavigationAction 

@@ -99,7 +99,7 @@ const DashboardPanel= props =>(
             <Grid item xs container direction="column" spacing={8}>
               <Grid item xs>
                 <Card >
-                  <CardHeader variant='h6' className={props.classes.cardHeader} title={'Score'}/>
+                  <CardHeader variant='h6' className={props.classes.cardHeader} title={'Leader Board'}/>
                   <Divider/>
                   <CardContent>
                    <StyledResult style={{ backgroundColor: props.position === 1 ? '#ffc400':props.position === 2? '#C0C0C0': '#cd7f32' }}>

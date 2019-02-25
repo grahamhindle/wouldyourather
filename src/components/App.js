@@ -18,7 +18,7 @@ const App = (props) => {
     <Route exact path = '/questions' component={QuestionsContainer } />
     <Route exact path = '/' component={Startup} />
     <Route exact path = '/add' component={NewQuestionContainer} />
-    <Route exact path = '/score' component={DashboardContainer} />
+    <Route exact path = '/leaderboard' component={DashboardContainer} />
     <MainMenuContainer />
   </StyledHomeContainer>
   )
