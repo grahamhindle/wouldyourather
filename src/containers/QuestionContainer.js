@@ -5,9 +5,9 @@ import Question from '../components/Question'
 import { selectAuthor, getAnswerText} from '../selectors/question'
 import { updateAnswer } from '../actions'
 import LoginContainer from '../containers/LoginContainer'
+import {Link} from 'react-router-dom'
 
-
-const QuestionContainer = props => props.authedUser ? <Question {...props} /> : <LoginContainer />
+const QuestionContainer = props => props.authedUser ? <Question {...props} /> : <Link to='/profile'/>
 
 
 

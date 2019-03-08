@@ -11,7 +11,7 @@ import Startup from '../components/Startup'
 
 
 const App = (props) => {
-  
+  console.log('app',props)
   return (
   <StyledHomeContainer >
     <Route exact path = '/profile' component={LoginContainer} />
